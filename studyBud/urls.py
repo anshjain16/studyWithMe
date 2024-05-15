@@ -1,12 +1,7 @@
-
 from django.contrib import admin
-from django.urls import path
-from django.http import HttpResponse
-
-def Home(Request):
-    return HttpResponse('Home Page')
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Home)
+    path('test/', include('base.urls')),
 ]
